@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { View, Text, Image, TouchableOpacity } from "react-native"
 import ButtonComp from "../../Components/ButtonComp"
 import InputComp from "../../Components/InputComp"
@@ -5,7 +6,18 @@ import ImagePath from "../../Constants/ImagePath"
 import StringContants from "../../Constants/StringContants"
 import { styles } from "./Loginstyles"
 export const Login = ({ navigation }) => {
-    return (
+    const [mobile, setMobile] = useState('')
+    const [password, setPassword] = useState('')
+    function validateLogin(){
+        if(!mobile.trim()){
+            alert('Enter your mobile number')
+        }else if(!password.trim()){
+alert('Enter your password')
+        }else{
+            // navigation.navigate('Home')
+        }
+    }
+        return (
         <View style={styles.container}>
             <View >
                 <TouchableOpacity onPress={() => { navigation.goBack() }} style={styles.btncontainer}>
@@ -19,11 +31,11 @@ export const Login = ({ navigation }) => {
                     <InputComp placeholder="+91" keyboardtype='numeric' />
                 </View>
                 <View style={styles.mobileno}>
-                    <InputComp placeholder={StringContants.Mobile_No} keyboardtype='numeric' />
+                    <InputComp placeholder={StringContants.Mobile_No} keyboardtype='numeric'value={mobile}  onchange={(val) => {if(val.match( "^[0-9]*$")){setMobile(val)}}} maxln={10}/>
                 </View>
             </View>
             <View style={styles.password}>
-                <InputComp placeholder={StringContants.Password} Show="Show" hide={true} />
+                <InputComp placeholder={StringContants.Password} value={password} onchange={(val)=>{setPassword(val)}} Show="Show" hide={true} />
             </View>
             <View style={styles.forgotContainer}>
                 <TouchableOpacity>
@@ -33,7 +45,7 @@ export const Login = ({ navigation }) => {
                     <Text style={styles.forgotpass}>{StringContants.Forgot_password}</Text>
                 </TouchableOpacity>
             </View>
-            <ButtonComp title={StringContants.Login} />
+            <ButtonComp title={StringContants.Login} onPress={validateLogin} />
         </View>
     )
 }

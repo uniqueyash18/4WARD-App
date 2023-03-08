@@ -1,7 +1,7 @@
 import { StyleSheet, TextInput, View, Text, TouchableOpacity } from "react-native"
 import { moderateScale, moderateVerticalScale } from "react-native-size-matters"
 
-export default ({ placeholder,Show,keyboardtype,hide,onPress }) => {
+export default ({ placeholder,Show,keyboardtype,hide,onPress,onchange,value,maxln }) => {
     const styles = StyleSheet.create({
         textInput: {
             alignItems: 'center',
@@ -27,7 +27,7 @@ export default ({ placeholder,Show,keyboardtype,hide,onPress }) => {
     })
     return (
         <View style={styles.inputcontainer}>
-            <TextInput style={styles.textInput} placeholder={placeholder} placeholderTextColor='#FFFFFF' keyboardType={keyboardtype} secureTextEntry={hide} />
+            <TextInput style={styles.textInput} placeholder={placeholder} placeholderTextColor='#FFFFFF' keyboardType={keyboardtype} secureTextEntry={hide} value={value} onChangeText={onchange} maxLength={maxln}/>
           {Show?<TouchableOpacity onPress={onPress} style={styles.show}> 
            <Text style={{color:"#FFFFFF"}}>{Show}</Text>
            </TouchableOpacity>:null}

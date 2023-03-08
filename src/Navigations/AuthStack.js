@@ -8,6 +8,11 @@ import { Signup } from "../Screens/Signup/Signup";
 export default function AuthStack(Stack) {
     return (
       <>
+       <Stack.Screen
+          name='Signup'
+          component={Signup}
+          options={{ headerShown: false }}
+        />
      <Stack.Screen
           name='Onboarding'
           component={Onboarding}
@@ -19,11 +24,11 @@ export default function AuthStack(Stack) {
           options={{ headerShown: false}}
           
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name='Signup'
           component={Signup}
           options={{ headerShown: false }}
-        />
+        /> */}
         <Stack.Screen
           name='OtpScreen'
           component={OtpScreen}
