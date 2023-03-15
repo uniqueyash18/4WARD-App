@@ -1,36 +1,65 @@
-import { StyleSheet, TextInput, View, Text, TouchableOpacity } from "react-native"
-import { moderateScale, moderateVerticalScale } from "react-native-size-matters"
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  Text,
+  TouchableOpacity,
+} from "react-native";
+import {
+  moderateScale,
+  moderateVerticalScale,
+} from "react-native-size-matters";
+import colors from "../Constants/colors";
 
-export default ({ placeholder,Show,keyboardtype,hide,onPress,onchange,value,maxln }) => {
-    const styles = StyleSheet.create({
-        textInput: {
-            alignItems: 'center',
-            justifyContent: 'center',
-            flex:1,
-            color:'#FFFFFF',
-            opacity:0.5
-        },
-        inputcontainer: {
-            height: moderateVerticalScale(48),
-            backgroundColor: "#4C4C4C",
-            borderRadius: moderateScale(8),
-            color: '#FFFFFF',
-            alignItems:'center',
-            flexDirection: 'row',
-            padding:moderateScale(16),
-            marginTop:moderateScale(16),
-        },
-        show:{
-            marginLeft:'auto',
-            opacity:0.5
-        }
-    })
-    return (
-        <View style={styles.inputcontainer}>
-            <TextInput style={styles.textInput} placeholder={placeholder} placeholderTextColor='#FFFFFF' keyboardType={keyboardtype} secureTextEntry={hide} value={value} onChangeText={onchange} maxLength={maxln}/>
-          {Show?<TouchableOpacity onPress={onPress} style={styles.show}> 
-           <Text style={{color:"#FFFFFF"}}>{Show}</Text>
-           </TouchableOpacity>:null}
-        </View>
-    )
-}
+export default ({
+  Show,
+  keyboardtype,
+  onPress,
+  onchange,
+  hide,
+  value,
+  placeholder,
+  ...props
+}) => {
+  return (
+    <View style={styles.inputcontainer}>
+      <TextInput
+        style={styles.textInput}
+        placeholderTextColor="#FFFFFF"
+        keyboardType={keyboardtype}
+        onChangeText={onchange}
+        secureTextEntry={hide}
+        placeholder={placeholder}
+        {...props}
+      />
+      {Show ? (
+        <TouchableOpacity onPress={onPress} style={styles.show}>
+          <Text style={{ color: "#FFFFFF" }}>{Show}</Text>
+        </TouchableOpacity>
+      ) : null}
+    </View>
+  );
+};
+const styles = StyleSheet.create({
+  textInput: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1,
+    color: colors.WHITE,
+    opacity: 0.5,
+  },
+  inputcontainer: {
+    height: moderateVerticalScale(48),
+    backgroundColor: colors.LIGHT_BACKGROUND_GREY,
+    borderRadius: moderateScale(8),
+    color: colors.WHITE,
+    alignItems: "center",
+    flexDirection: "row",
+    padding: moderateScale(16),
+    marginTop: moderateScale(16),
+  },
+  show: {
+    marginLeft: "auto",
+    opacity: 0.5,
+  },
+});

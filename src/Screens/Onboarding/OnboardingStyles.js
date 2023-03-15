@@ -1,17 +1,18 @@
 import { StyleSheet } from "react-native";
-import { moderateScale, moderateVerticalScale, verticalScale } from "react-native-size-matters";
+import { moderateScale, moderateVerticalScale} from "react-native-size-matters";
+import colors from "../../Constants/colors";
 export const styles = StyleSheet.create({
     container:{
-        backgroundColor: '#2E2E2E',
+        backgroundColor: colors.DARK_GREY,
         flex: 1,
     },
     main: {
-        backgroundColor: '#2E2E2E',
+        backgroundColor: colors.DARK_GREY,
     },
     card: {
         height:moderateVerticalScale(647),
         width:moderateVerticalScale(315),
-        backgroundColor: "#4C4C4C",
+        backgroundColor: colors.LIGHT_BACKGROUND_GREY,
         alignItems: "center",
         flex: 1,
         marginLeft: moderateScale(24),
@@ -22,7 +23,7 @@ export const styles = StyleSheet.create({
     card2: {
         height:moderateVerticalScale(647),
         width:moderateVerticalScale(315),
-        backgroundColor: "#4C4C4C",
+        backgroundColor: colors.LIGHT_BACKGROUND_GREY,
         alignItems: "center",
         flex: 1,
         marginLeft: moderateScale(8),
@@ -36,19 +37,19 @@ export const styles = StyleSheet.create({
     },
     heading: {
         fontSize:moderateScale(22),
-        color: '#FFFFFF',
+        color: colors.WHITE,
         lineHeight: moderateScale(32),
         marginTop: moderateScale(90),
         textAlign: 'center'
     },
     text2: {
         fontSize: 13,
-        color: "#999999",
+        color: colors.INPUT_TEXT,
         textAlign: 'center',
         marginTop: moderateScale(8),
     },
     getstarted: {
-        color: "#FFFFFF",
+        color: colors.WHITE,
         fontSize: moderateScale(15),
         fontWeight: 500,
         lineHeight: moderateVerticalScale(32),

@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
 import { moderateScale, moderateVerticalScale } from "react-native-size-matters";
+import colors from "../../Constants/colors";
 
 export const styles=StyleSheet.create({
     container:{
-     backgroundColor:'#2E2E2E'  ,
+     backgroundColor:colors.DARK_GREY  ,
      flex:1,
      paddingHorizontal:moderateScale(24) 
     },
@@ -15,7 +16,7 @@ export const styles=StyleSheet.create({
         alignSelf:'center'
     },
     toptext:{
-        color:'#9C9C9C',
+        color:colors.INPUT_TEXT,
         marginTop:moderateScale(54),
         textAlign:'center',
         fontSize:moderateVerticalScale(13),
@@ -23,7 +24,7 @@ export const styles=StyleSheet.create({
 
     },
     or:{
-        color:'#FFFFFF',
+        color:colors.WHITE,
         textAlign:'center',
         marginTop:moderateScale(16),
         fontSize:moderateVerticalScale(16)
@@ -34,11 +35,11 @@ export const styles=StyleSheet.create({
         marginTop:moderateScale(16)
     },
     signup:{
-        color:'#41CCFF',
+        color:colors.LIGHT_BLUE,
         fontSize:moderateVerticalScale(14)
     },
     newhere:{
-        color:"#FFFFFF",
+        color:colors.WHITE,
         fontSize:moderateVerticalScale(14)
     }
     

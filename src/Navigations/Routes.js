@@ -6,8 +6,8 @@ const Stack = createNativeStackNavigator();
 export default function Routes() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        {false? MainStack(Stack):  AuthStack(Stack)}</Stack.Navigator>
+      <Stack.Navigator screenOptions={{animation:'slide_from_right'}}>
+        {true? MainStack(Stack):  AuthStack(Stack)}</Stack.Navigator>
     </NavigationContainer>
   );
 }

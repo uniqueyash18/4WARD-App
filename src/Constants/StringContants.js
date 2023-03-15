@@ -27,5 +27,20 @@ export default{
     Confirm_password:'Confirm password',
     Enter_4_Digit:'Enter the 4-digit code sent to you at',
     Edit_My_Number:'Edit my mobile number',
-    Resend_Otp_in:'Resend code in '
+    Resend_Otp_in:'Resend code in ',
+    Device_location_is_off:'Device location is off',
+    TURN_ON:'TURN ON',
+    Turning_on_device_location_will_ensure_accurate_road_alerts:'Turning on device location will ensure accurate road alerts.',
+    Or:'Or',
+    Suggestions:'Suggestions',
+    Comment:'Comment',
+    Likes:'Likes',
+    VIEW_MAP:'VIEW MAP',
+    Save_Changes:'SAVE CHANGES',
+    Save:'SAVE',
+    Enter_Loc_Manually:'Enter location manually',
+    Add_info:'Add Info',
+    Write_description:'Write description here...',
+    Add_location:'Add Locaion',
+    Post:'POST' 
 }

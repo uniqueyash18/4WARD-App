@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native";
 import { moderateScale, moderateVerticalScale } from "react-native-size-matters";
+import colors from "../../Constants/colors";
 
 export const styles = StyleSheet.create({
     backarrow: {
         width: moderateVerticalScale(13),
         height: moderateVerticalScale(12),
-        margin: moderateScale(6),
+        marginVeritical: moderateScale(6),
 
     },
     btncontainer: {
@@ -13,18 +14,18 @@ export const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        backgroundColor: "#2E2E2E",
+        backgroundColor: colors.DARK_GREY,
         paddingHorizontal: moderateScale(24)
     },
     Setpass: {
         height: moderateScale(40),
-        color: "#FFFFFF",
+        color:colors.WHITE,
         fontSize: moderateVerticalScale(24),
         lineHeight: moderateScale(32),
         marginTop: moderateScale(16)
     },
     Createandsecure: {
-        color: '#A6A6A6',
+        color: colors.INPUT_TEXT,
         fontSize: moderateVerticalScale(15),
         marginBottom: moderateScale(16)
     },
