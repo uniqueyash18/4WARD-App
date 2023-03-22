@@ -3,16 +3,20 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Image } from "react-native";
 import ImagePath from "../Constants/ImagePath";
 import NavigationStrings from "../Constants/NavigationStrings";
-import { AddPost, ChangePwd, EditProfile, Home, Notification, PostDetails, Profile, Seacrh } from "../Screens";
+import { AddPost, Home, Notification, Profile, Seacrh } from "../Screens";
 const Tab = createBottomTabNavigator();
 export default function TabRoutes() {
   return (
     <Tab.Navigator
-      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarHideOnKeyboard: true,
+      }}
     >
       <Tab.Screen
-        name={NavigationStrings.HOMESTACK}
-        component={HomeStack}
+        name={NavigationStrings.HOME}
+        component={Home}
         options={{
           tabBarIcon: ({ focused }) => {
             return focused ? (
@@ -34,7 +38,6 @@ export default function TabRoutes() {
         name={NavigationStrings.SEARCH}
         component={Seacrh}
         options={{
-          tabBarHideOnKeyboard: true,
           tabBarIcon: ({ focused }) => {
             return focused ? (
               <Image style={{ tintColor: "red" }} source={ImagePath.icSearch} />
@@ -93,8 +96,8 @@ export default function TabRoutes() {
         }}
       />
       <Tab.Screen
-        name={NavigationStrings.PROFILESTACK}
-        component={ProfileStack}
+        name={NavigationStrings.PROFILE}
+        component={Profile}
         options={{
           tabBarIcon: ({ focused }) => {
             return focused ? (
@@ -115,27 +118,3 @@ export default function TabRoutes() {
     </Tab.Navigator>
   );
 }
-
-const Stack = createNativeStackNavigator();
-
-export const HomeStack = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
-    >
-      <Stack.Screen name={NavigationStrings.HOME} component={Home} />
-      <Stack.Screen name={NavigationStrings.POST_DETAILS} component={PostDetails} />
-    </Stack.Navigator>
-  );
-};
-export const ProfileStack = () => {
-  return (
-    <Stack.Navigator
-      screenOptions={{ headerShown: false, tabBarShowLabel: false }}
-    >
-      <Stack.Screen name={NavigationStrings.PROFILE} component={Profile} />
-      <Stack.Screen name={NavigationStrings.EDIT_PROFILE} component={EditProfile} />
-      <Stack.Screen name={NavigationStrings.CHANGE_PWD} component={ChangePwd} />
-    </Stack.Navigator>
-  );
-};

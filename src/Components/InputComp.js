@@ -30,6 +30,7 @@ export default ({
         onChangeText={onchange}
         secureTextEntry={hide}
         placeholder={placeholder}
+        value={value}
         {...props}
       />
       {Show ? (

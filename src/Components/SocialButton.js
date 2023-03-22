@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     letterSpacing: moderateScale(0.88),
     textAlign: "center",
+    marginRight:moderateVerticalScale(18)
   },
   img: {
     alignSelf: "center",
